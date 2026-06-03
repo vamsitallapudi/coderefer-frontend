@@ -145,7 +145,7 @@ export default function ContactPage() {
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { step: "01", text: "We review your message within 1 business day" },
+                      { step: "01", text: "We review your message within 1-2 business days" },
                       { step: "02", text: "30-min discovery call to understand your challenge" },
                       { step: "03", text: "We send a clear proposal — scope, timeline, cost" },
                       { step: "04", text: "Kickoff when you're ready" },

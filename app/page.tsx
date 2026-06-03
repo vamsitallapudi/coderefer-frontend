@@ -46,7 +46,7 @@ function Reveal({
 
 const stats = [
   { value: "50+", label: "Projects Delivered" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "99%", label: "Client Satisfaction" },
   { value: "30+", label: "AI Automations" },
   { value: "12+", label: "Industries Served" },
 ]
@@ -174,7 +174,7 @@ export default function HomePage() {
           loop
           playsInline
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover hero-video"
+          className="absolute inset-0 w-full h-full object-cover md:translate-x-[15%]"
         >
           <source src="/hero.webm" type="video/webm" />
           <source src="/hero.mp4" type="video/mp4" />
@@ -216,8 +216,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative z-5 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left */}
             <div>
               <div className="animate-fade-up opacity-start mb-6 inline-flex items-center gap-2 rounded-full bg-orange-600/10 border border-orange-600/20 px-4 py-1.5">
@@ -328,7 +328,7 @@ export default function HomePage() {
 
       {/* ── STATS ── */}
       <section className="section-padding border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
             {stats.map((s, i) => (
               <Reveal key={i} delay={i * 80}>
@@ -349,7 +349,7 @@ export default function HomePage() {
 
       {/* ── SERVICES ── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-16">
             <Reveal>
               <p className="text-xs text-orange-500 font-semibold uppercase tracking-widest mb-3">
@@ -385,7 +385,7 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-xl bg-orange-600/10 border border-orange-600/20 flex items-center justify-center group-hover:bg-orange-600/20 transition-colors duration-300">
                       <svc.icon size={22} className="text-orange-500" />
                     </div>
-                    <span className="text-[11px] font-medium text-zinc-600 bg-white/[0.04] border border-white/[0.07] rounded-full px-3 py-1">
+                    <span className="text-[11px] font-medium text-orange-400 bg-orange-600/10 border border-orange-600/20 rounded-full px-3 py-1">
                       {svc.tag}
                     </span>
                   </div>
@@ -408,7 +408,7 @@ export default function HomePage() {
 
       {/* ── ABOUT ── */}
       <section className="section-padding border-y border-white/[0.06] bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <Reveal direction="left">
               <div className="relative h-[400px] lg:h-[480px] rounded-3xl overflow-hidden">
@@ -502,7 +502,7 @@ export default function HomePage() {
 
       {/* ── PORTFOLIO ── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
               <Reveal>
@@ -550,9 +550,6 @@ export default function HomePage() {
                     </div>
                     <p className="text-sm text-zinc-500 leading-relaxed">{p.desc}</p>
                   </div>
-                  <div className="absolute top-5 right-5 w-7 h-7 rounded-full glass-card flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <ArrowUpRight size={13} className="text-orange-400" />
-                  </div>
                 </div>
               </Reveal>
             ))}
@@ -562,7 +559,7 @@ export default function HomePage() {
 
       {/* ── TESTIMONIALS ── */}
       <section className="section-padding border-y border-white/[0.06] bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-14">
             <Reveal>
               <p className="text-xs text-orange-500 font-semibold uppercase tracking-widest mb-3">
@@ -611,7 +608,7 @@ export default function HomePage() {
 
       {/* ── BLOG ── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
               <Reveal>
@@ -669,7 +666,7 @@ export default function HomePage() {
 
       {/* ── CTA ── */}
       <section className="section-padding border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-950/60 via-zinc-900 to-zinc-950 border border-orange-600/20 px-8 py-16 sm:px-12 sm:py-20 text-center">
               <div

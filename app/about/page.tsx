@@ -92,7 +92,7 @@ export default function AboutPage() {
               { v: "2021", l: "Founded" },
               { v: "50+", l: "Projects Shipped" },
               { v: "12", l: "Industries" },
-              { v: "98%", l: "Satisfaction Rate" },
+              { v: "99%", l: "Satisfaction Rate" },
             ].map((s, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="bg-[#080808] p-8 lg:p-12 group hover:bg-[#0e0e0e] transition-colors duration-300 h-full">

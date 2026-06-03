@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useLayoutEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowUpRight } from "lucide-react"
@@ -18,6 +18,11 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
+  // Set initial state before paint — prevents flash on mount/refresh
+  useLayoutEffect(() => {
+    setScrolled(window.scrollY > 24)
+  }, [])
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener("scroll", onScroll, { passive: true })
@@ -34,7 +39,7 @@ export function Navbar() {
         scrolled ? "pt-3" : "pt-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6">
         <div
           className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
             scrolled
@@ -68,10 +73,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-1.5 text-sm rounded-full transition-all duration-200 cursor-pointer ${
+                  className={`px-4 py-1.5 text-sm rounded-full cursor-pointer ${
                     active
                       ? "bg-white/[0.1] text-white font-medium"
-                      : "text-zinc-400 hover:text-white hover:bg-white/[0.06]"
+                      : "text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-colors duration-200"
                   }`}
                 >
                   {link.label}
@@ -115,10 +120,10 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-4 py-3 text-sm rounded-xl transition-all duration-200 cursor-pointer ${
+                    className={`px-4 py-3 text-sm rounded-xl cursor-pointer ${
                       active
                         ? "bg-white/[0.08] text-white font-medium"
-                        : "text-zinc-400 hover:text-white hover:bg-white/[0.05]"
+                        : "text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors duration-200"
                     }`}
                   >
                     {link.label}
