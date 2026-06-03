@@ -186,6 +186,16 @@ body {
   }
 }
 
+/* ─── Hero video positioning ─── */
+.hero-video {
+  transform: none; /* mobile: centered */
+}
+@media (min-width: 768px) {
+  .hero-video {
+    transform: translateX(15%); /* desktop: shift right */
+  }
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

@@ -166,24 +166,44 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-grid">
-        {/* Ambient glows */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+        {/* Full-screen video — anchored right so robot stays in same position as card was */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover hero-video"
+        >
+          <source src="/hero.webm" type="video/webm" />
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay layers */}
+        <div className="pointer-events-none absolute inset-0">
+          {/* Desktop: black left, fully clear by 50% so robot face is uncovered */}
           <div
-            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full animate-glow"
+            className="absolute inset-0 hidden md:block"
             style={{
               background:
-                "radial-gradient(ellipse at center, rgba(234,88,12,0.22) 0%, transparent 65%)",
+                "linear-gradient(to right, #09090b 0%, #09090b 28%, rgba(9,9,11,0.75) 38%, rgba(9,9,11,0.15) 48%, transparent 56%)",
             }}
           />
-          <div
-            className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full"
-            style={{
-              background:
-                "radial-gradient(ellipse at center, rgba(234,88,12,0.1) 0%, transparent 70%)",
-            }}
-          />
-          {/* Large watermark */}
+
+          {/* Mobile: flat dark wash */}
+          <div className="absolute inset-0 md:hidden bg-zinc-950/70" />
+
+          {/* Top vignette — navbar area */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-zinc-950/80 to-transparent" />
+
+          {/* Bottom fade — blends into partners strip */}
+          <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-zinc-950 to-transparent" />
+
+          {/* Grid texture on left */}
+          <div className="absolute inset-0 bg-grid opacity-15" />
+
+          {/* Watermark */}
           <div
             className="absolute bottom-0 left-4 text-[220px] font-black leading-none select-none"
             style={{
@@ -268,66 +288,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — video */}
-            <div className="relative">
-              <div className="relative h-[480px] lg:h-[560px] rounded-3xl overflow-hidden glass-card">
-                {/* Video — contained, right side only */}
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src="/hero.webm" type="video/webm" />
-                  <source src="/hero.mp4" type="video/mp4" />
-                </video>
-                {/* Bottom fade → blends into hero bg */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-zinc-950/20 pointer-events-none" />
-                {/* Left edge fade → blends into left text column */}
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/50 to-transparent pointer-events-none" />
-                {/* Orange top-right warmth accent */}
-                <div
-                  className="absolute top-0 right-0 w-56 h-56 pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at top right, rgba(234,88,12,0.22) 0%, transparent 65%)",
-                  }}
-                />
-                {/* Subtle orange border ring */}
-                <div className="absolute inset-0 rounded-3xl ring-1 ring-orange-600/20 pointer-events-none" />
-              </div>
-
-              {/* Floating stat cards */}
-              <div className="absolute -bottom-6 -left-4 md:-left-8 animate-float z-10">
-                <div className="glass-card rounded-2xl px-5 py-4 min-w-[148px]">
-                  <div
-                    className="text-2xl font-black text-white mb-0.5"
-                    style={{ fontFamily: "var(--font-outfit)" }}
-                  >
-                    50+
-                  </div>
-                  <div className="text-xs text-zinc-500">Projects Delivered</div>
-                  <div className="mt-2 w-6 h-0.5 rounded-full bg-orange-600" />
-                </div>
-              </div>
-
-              <div
-                className="absolute -top-4 -right-4 md:-right-8 animate-float z-10"
-                style={{ animationDelay: "1.5s" }}
-              >
-                <div className="glass-card rounded-2xl px-5 py-4 min-w-[148px]">
-                  <div
-                    className="text-2xl font-black text-orange-500 mb-0.5"
-                    style={{ fontFamily: "var(--font-outfit)" }}
-                  >
-                    98%
-                  </div>
-                  <div className="text-xs text-zinc-500">Client Satisfaction</div>
-                  <div className="mt-2 w-6 h-0.5 rounded-full bg-orange-600" />
-                </div>
-              </div>
-            </div>
+            {/* Right col — transparent, video background shows robot here */}
+            <div className="hidden lg:block" />
           </div>
         </div>
 
@@ -342,22 +304,25 @@ export default function HomePage() {
       <section className="border-y border-white/[0.06] bg-[#080808] py-6 overflow-hidden">
         <div className="flex items-center gap-3 mb-3 px-8">
           <div className="w-1 h-1 rounded-full bg-orange-600" />
-          <p className="text-xs text-zinc-600 tracking-widest uppercase font-medium">
+          <p className="text-xs text-orange-500 tracking-widest uppercase font-medium">
             Technologies &amp; Platforms We Work With
           </p>
         </div>
-        <div className="flex">
-          <div className="flex items-center gap-12 animate-marquee shrink-0 pr-12">
-            {partners.map((name, i) => (
-              <span
-                key={i}
-                className="text-sm font-semibold text-zinc-600 hover:text-zinc-400 transition-colors duration-200 whitespace-nowrap cursor-default"
-                style={{ fontFamily: "var(--font-outfit)" }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
+        <div className="flex overflow-hidden">
+          {/* Two identical copies — seamless loop */}
+          {[0, 1].map((copy) => (
+            <div key={copy} aria-hidden={copy === 1} className="flex items-center gap-12 animate-marquee shrink-0 pr-12">
+              {partners.map((name, i) => (
+                <span
+                  key={i}
+                  className="text-sm font-semibold text-zinc-600 hover:text-zinc-400 transition-colors duration-200 whitespace-nowrap cursor-default"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
