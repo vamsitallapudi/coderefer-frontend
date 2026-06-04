@@ -93,7 +93,7 @@ export default function ServicesPage() {
 
       {/* Service sections */}
       {services.map((svc, i) => (
-        <section id="services"
+        <section
           key={svc.id}
           id={svc.id}
           className={`section-padding border-t border-white/[0.06] ${i % 2 === 1 ? "bg-[#080808]" : ""}`}
