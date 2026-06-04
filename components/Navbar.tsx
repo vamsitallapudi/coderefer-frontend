@@ -41,14 +41,14 @@ export function Navbar() {
     >
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6">
         <div
-          className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
+          className={`navbarContainer flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
             scrolled
               ? "bg-[#0A0A0A]/90 backdrop-blur-2xl border border-white/[0.07] shadow-2xl shadow-black/40"
               : "bg-transparent"
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+          <Link href="/" className="logoContainer flex items-center gap-2.5 group shrink-0" onClick={() => { if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" }) }}>
             <div className="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-200 glow-orange">
               <span
                 className="text-white font-bold text-sm"

@@ -66,7 +66,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section id="hero" className="relative pt-40 pb-20 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 right-1/3 w-[500px] h-[300px] rounded-full animate-glow"
             style={{ background: "radial-gradient(ellipse at center, rgba(234,88,12,0.14) 0%, transparent 65%)" }} />
@@ -90,7 +90,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="section-padding pt-0">
+      <section id="posts" className="section-padding pt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured post */}
           <Reveal>
@@ -157,7 +157,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="section-padding border-t border-white/[0.06] bg-[#080808]">
+      <section id="newsletter" className="section-padding border-t border-white/[0.06] bg-[#080808]">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <Reveal>
             <h2 className="text-3xl font-black text-white mb-3" style={{ fontFamily: "var(--font-outfit)" }}>

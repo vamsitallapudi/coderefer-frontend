@@ -61,7 +61,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section id="hero" className="relative pt-40 pb-20 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full animate-glow"
             style={{ background: "radial-gradient(ellipse at center, rgba(234,88,12,0.18) 0%, transparent 65%)" }} />
@@ -93,7 +93,7 @@ export default function ServicesPage() {
 
       {/* Service sections */}
       {services.map((svc, i) => (
-        <section
+        <section id="services"
           key={svc.id}
           id={svc.id}
           className={`section-padding border-t border-white/[0.06] ${i % 2 === 1 ? "bg-[#080808]" : ""}`}
@@ -164,7 +164,7 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section className="section-padding border-t border-white/[0.06]">
+      <section id="cta" className="section-padding border-t border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <Reveal>
             <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-5"

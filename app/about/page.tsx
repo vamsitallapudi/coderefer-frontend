@@ -35,7 +35,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
+      <section id="hero" className="relative pt-40 pb-20 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 right-1/4 w-[500px] h-[400px] rounded-full animate-glow"
             style={{ background: "radial-gradient(ellipse at center, rgba(234,88,12,0.15) 0%, transparent 65%)" }} />
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-white/[0.06] bg-[#080808]">
+      <section id="stats" className="border-y border-white/[0.06] bg-[#080808]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
             {[
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding">
+      <section id="values" className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-14">
             <Reveal>
@@ -137,7 +137,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-padding border-t border-white/[0.06] bg-[#080808]">
+      <section id="team" className="section-padding border-t border-white/[0.06] bg-[#080808]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-14">
             <Reveal>
@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding border-t border-white/[0.06]">
+      <section id="cta" className="section-padding border-t border-white/[0.06]">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <Reveal>
             <h2 className="text-4xl font-black text-white mb-4" style={{ fontFamily: "var(--font-outfit)" }}>

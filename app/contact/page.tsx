@@ -20,17 +20,33 @@ function Reveal({ children, delay = 0, direction = "up" }: { children: React.Rea
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
   const [form, setForm] = useState({ name: "", email: "", company: "", service: "", message: "" })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error("Failed to send")
+      setSubmitted(true)
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <>
       {/* Header */}
-      <section className="relative pt-40 pb-16 overflow-hidden">
+      <section id="hero" className="relative pt-40 pb-16 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full animate-glow"
             style={{ background: "radial-gradient(ellipse at center, rgba(234,88,12,0.15) 0%, transparent 65%)" }} />
@@ -54,7 +70,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding pt-0 pb-24">
+      <section id="contact-form" className="section-padding pt-0 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Form — takes 3 cols */}
@@ -69,7 +85,7 @@ export default function ContactPage() {
                       Message Received
                     </h3>
                     <p className="text-zinc-400 max-w-sm">
-                      We&apos;ll review your message and get back to you within one business day. Check your inbox.
+                      We&apos;ll review your message and get back to you within 1-2 business days. Please check your inbox.
                     </p>
                   </div>
                 ) : (
@@ -128,8 +144,11 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-orange w-full justify-center">
-                      Send Message <ArrowUpRight size={15} />
+                    {error && (
+                      <p className="text-sm text-red-400 text-center">{error}</p>
+                    )}
+                    <button type="submit" disabled={loading} className="btn-orange w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+                      {loading ? "Sending…" : (<>Send Message <ArrowUpRight size={15} /></>)}
                     </button>
                   </form>
                 )}
@@ -165,7 +184,7 @@ export default function ContactPage() {
                   {[
                     { icon: Mail, label: "Email", value: "support@coderefer.com" },
                     { icon: MapPin, label: "Based in", value: "India · Works globally" },
-                    { icon: Clock, label: "Response time", value: "Within 1 business day" },
+                    { icon: Clock, label: "Response time", value: "Within 1-2 Business Days" },
                   ].map(({ icon: Icon, label, value }) => (
                     <div key={label} className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-orange-600/10 border border-orange-600/20 flex items-center justify-center shrink-0">

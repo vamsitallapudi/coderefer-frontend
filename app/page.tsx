@@ -166,7 +166,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         {/* Full-screen video — anchored right so robot stays in same position as card was */}
         <video
           autoPlay
@@ -216,8 +216,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative z-5 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="heroContainer relative z-5 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 lg:pt-40 lg:pb-32">
+          <div className="heroGrid grid md:grid-cols-2 gap-12 lg:gap-16 items-center justify-items-start">
             {/* Left */}
             <div>
               <div className="animate-fade-up opacity-start mb-6 inline-flex items-center gap-2 rounded-full bg-orange-600/10 border border-orange-600/20 px-4 py-1.5">
@@ -283,7 +283,7 @@ export default function HomePage() {
                 <div className="w-px h-6 bg-white/10" />
                 <p className="text-[12px] text-zinc-500">
                   Trusted across{" "}
-                  <span className="text-zinc-300 font-medium">12 industries</span>
+                  <span className="text-zinc-300 font-medium">12+ industries</span>
                 </p>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PARTNERS ── */}
-      <section className="border-y border-white/[0.06] bg-[#080808] py-6 overflow-hidden">
+      <section id="clients" className="border-y border-white/[0.06] bg-[#080808] py-6 overflow-hidden">
         <div className="flex items-center gap-3 mb-3 px-8">
           <div className="w-1 h-1 rounded-full bg-orange-600" />
           <p className="text-xs text-orange-500 tracking-widest uppercase font-medium">
@@ -327,7 +327,7 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS ── */}
-      <section className="section-padding border-b border-white/[0.06]">
+      <section id="stats" className="section-padding border-b border-white/[0.06]">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
             {stats.map((s, i) => (
@@ -348,7 +348,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="section-padding">
+      <section id="services" className="section-padding">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mb-16">
             <Reveal>
@@ -407,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section className="section-padding border-y border-white/[0.06] bg-[#080808]">
+      <section id="team" className="section-padding border-y border-white/[0.06] bg-[#080808]">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <Reveal direction="left">
@@ -501,7 +501,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PORTFOLIO ── */}
-      <section className="section-padding">
+      <section id="portfolio" className="section-padding">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
@@ -558,7 +558,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="section-padding border-y border-white/[0.06] bg-[#080808]">
+      <section id="testimonials" className="section-padding border-y border-white/[0.06] bg-[#080808]">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-14">
             <Reveal>
@@ -607,7 +607,7 @@ export default function HomePage() {
       </section>
 
       {/* ── BLOG ── */}
-      <section className="section-padding">
+      <section id="blog" className="section-padding">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
@@ -665,7 +665,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section-padding border-t border-white/[0.06]">
+      <section id="cta" className="section-padding border-t border-white/[0.06]">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-950/60 via-zinc-900 to-zinc-950 border border-orange-600/20 px-8 py-16 sm:px-12 sm:py-20 text-center">
