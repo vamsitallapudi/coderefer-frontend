@@ -182,7 +182,7 @@ export default function ContactPage() {
                 <div className="glass-card rounded-2xl p-6 space-y-4">
                   <h3 className="text-base font-bold text-white" style={{ fontFamily: "var(--font-outfit)" }}>Contact Details</h3>
                   {[
-                    { icon: Mail, label: "Email", value: "support@coderefer.com" },
+                    { icon: Mail, label: "Email", value: "support@outstretch.ai" },
                     { icon: MapPin, label: "Based in", value: "India · Works globally" },
                     { icon: Clock, label: "Response time", value: "Within 1-2 Business Days" },
                   ].map(({ icon: Icon, label, value }) => (

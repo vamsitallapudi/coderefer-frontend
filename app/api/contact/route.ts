@@ -11,8 +11,8 @@ export async function POST(req: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "CodeRefer Contact <contact@coderefer.com>",
-      to: "vamsi@coderefer.com",
+      from: "outstretch.ai Contact <support@outstretch.ai>",
+      to: "support@outstretch.ai",
       replyTo: email,
       subject: `New Contact: ${name}${company ? ` — ${company}` : ""}`,
       html: `

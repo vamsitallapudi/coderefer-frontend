@@ -46,7 +46,7 @@ export function Footer() {
                 className="font-semibold text-white text-[17px] tracking-tight"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
-                Coderefer
+                outstretch.ai
               </span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs mb-6">
@@ -97,7 +97,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-zinc-600">
-            © {new Date().getFullYear()} Coderefer. All rights reserved.
+            © {new Date().getFullYear()} outstretch.ai. All rights reserved.
           </p>
           <Link
             href="/contact"

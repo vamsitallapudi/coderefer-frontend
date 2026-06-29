@@ -109,7 +109,7 @@ const projects = [
 const testimonials = [
   {
     quote:
-      "Coderefer didn't just deliver a product — they changed how our entire operations team thinks about automation. ROI in under 60 days.",
+      "outstretch.ai didn't just deliver a product — they changed how our entire operations team thinks about automation. ROI in under 60 days.",
     name: "Sarah Chen",
     role: "COO, NovaPay",
     initials: "SC",
@@ -445,7 +445,7 @@ export default function HomePage() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="text-zinc-400 leading-relaxed mb-6 max-w-md">
-                  At Coderefer, we bring together engineers, strategists, and operators
+                  At outstretch.ai, we bring together engineers, strategists, and operators
                   to build AI that earns its keep. Not experiments — systems that run
                   your business better.
                 </p>
@@ -492,7 +492,7 @@ export default function HomePage() {
 
               <Reveal delay={560}>
                 <Link href="/about" className="btn-ghost text-sm">
-                  About Coderefer <ArrowUpRight size={14} />
+                  About outstretch.ai <ArrowUpRight size={14} />
                 </Link>
               </Reveal>
             </div>

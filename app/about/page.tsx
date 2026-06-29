@@ -44,7 +44,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Reveal>
-                <p className="text-xs text-orange-500 font-semibold uppercase tracking-widest mb-4">About Coderefer</p>
+                <p className="text-xs text-orange-500 font-semibold uppercase tracking-widest mb-4">About outstretch.ai</p>
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-6"
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                  Coderefer is an AI agency built by engineers and operators who&apos;ve been burned by
+                  outstretch.ai is an AI agency built by engineers and operators who&apos;ve been burned by
                   overhyped implementations. We build things that actually work — and make sure your team
                   can run them without us.
                 </p>

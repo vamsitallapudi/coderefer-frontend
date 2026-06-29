@@ -19,12 +19,12 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Coderefer — AI Agency",
+  title: "outstretch.ai — AI Agency",
   description:
     "We build AI agents, workflow automations, and intelligent systems for businesses ready to lead. Consulting, development, and implementation training.",
   keywords: ["AI agency", "AI agents", "workflow automation", "AI consulting", "machine learning"],
   openGraph: {
-    title: "Coderefer — AI Agency",
+    title: "outstretch.ai — AI Agency",
     description: "AI agents, automations, and intelligent systems for businesses ready to lead.",
     type: "website",
   },

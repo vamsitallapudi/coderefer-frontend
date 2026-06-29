@@ -54,14 +54,14 @@ export function Navbar() {
                 className="text-white font-bold text-sm"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
-                CR
+                OS
               </span>
             </div>
             <span
               className="font-semibold text-white text-[17px] tracking-tight"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              Coderefer
+              outstretch.ai
             </span>
           </Link>
 
